@@ -1,34 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="icon" href="https://thehtmlproject.github.io/home/Icon.jpeg">
 <head>
-  <meta charset="UTF-8">
-  <title>The HTML Project</title>
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The HTML Project</title>
+    <link rel="icon" href="https://thehtmlproject.github.io/home/Icon.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: grey;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Noto Sans', sans-serif;
+            color: white;
+        }
+        .title-logo {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .title-logo .title {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .title-logo .logo img {
+            width: 100px;
+            height: auto;
+            margin-top: 5px;
+        }
+        .countdown {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .bottom-button {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            font-family: 'Noto Sans', sans-serif;
+        }
+    </style>
 </head>
 <body>
-  <iframe src="https://thehtmlproject.github.io/home"></iframe>
-</body>
-    <script>
-              document.addEventListener("DOMContentLoaded", function () {
-    const currentMessage = "This website is just an embedded preview of the real thing. Fullscreening games will not work. If you would like to see my website at its full functionality, please visit https://tinyurl.com/thehtmlsl/"; 
+    <div class="title-logo">
+         <div class="logo">
+        <img src="https://thehtmlproject.github.io/home/Icon.jpeg" alt="Logo">
+                </div>
+        <div class="title">The HTML Project</div>
+       
+            
+     
+    </div>
+    <div class="bottom-button">
+        <button onclick="window.location.href='/preview/'">Preview my website</button>
+    </div>
+    <div class="countdown" id="timer">Redirecting in 5 seconds...</div>
 
-    if (localStorage.getItem("popupMessage") !== currentMessage) {
-        alert(currentMessage);
-        localStorage.setItem("popupMessage", currentMessage);
-    }
-});
+    <script>
+        let seconds = 5;
+        const timerElement = document.getElementById('timer');
+        const redirectUrl = "https://thehtmlproject1.github.io/redirectsl/index.html"; // Change to your target URL
+
+        const countdown = setInterval(() => {
+            seconds--;
+            if (seconds > 0) {
+                timerElement.textContent = `Redirecting in ${seconds} seconds...`;
+            } else {
+                clearInterval(countdown);
+                window.location.href = redirectUrl;
+            }
+        }, 1000);
     </script>
+</body>
 </html>
