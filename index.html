@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The HTML Project</title>
-        <meta name="description" content="Welcome to The HTML Project's landing page. My site is currently up on GitHub, so please click the button below to get redirected. Enjoy!">
+    <meta name="description" content="Welcome to The HTML Project's landing page. My site is currently up on GitHub, so please click the button below to get redirected. Enjoy!">
     <link rel="icon" href="https://thehtmlproject.github.io/home/Icon.jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <style>
@@ -62,12 +62,14 @@
      
     </div>
     <div class="bottom-button">
+        <button onclick="window.location.href='/redirect/'">Go to my Website</button>
         <button onclick="window.location.href='/preview/'">Preview my website</button>
+        <button onclick="window.location.href='https://pulsar.thehtmlproject.icu'">Go to Pulsar</button>
     </div>
-    <div class="countdown" id="timer">Redirecting in 5 seconds...</div>
+    <div class="countdown" id="timer">Redirecting in 3 seconds...</div>
 
     <script>
-        let seconds = 5;
+        let seconds = 3;
         const timerElement = document.getElementById('timer');
         const redirectUrl = "https://thehtmlproject1.github.io/redirectsl/index.html"; // Change to your target URL
 
